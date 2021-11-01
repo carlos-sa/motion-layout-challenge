@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constrainedHeight="true"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/imageContainer"
+            motion:layout_constraintStart_toStartOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constrainedHeight="true"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/imageContainer"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintHorizontal_bias="0.6"
+            android:layout_marginStart="350dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp" />
+        <Constraint
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toBottomOf="@id/imageContainer"
+            motion:layout_constraintLeft_toLeftOf="@id/imageContainer"
+            motion:layout_constraintRight_toRightOf="@id/imageContainer"
+            motion:layout_constraintTop_toTopOf="@id/imageContainer"
+            motion:transitionEasing="standard" />
+    </ConstraintSet>
+    <Transition
+        motion:constraintSetStart="@+id/start"
+        motion:constraintSetEnd="@+id/end" >
+        <OnSwipe motion:dragDirection="dragLeft"
+            motion:touchAnchorId="@+id/imageContainer" />
+    </Transition>
+
+
+</MotionScene>
